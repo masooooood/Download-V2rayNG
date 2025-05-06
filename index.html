@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #f3f4f6;
-            --text-color: #1f2937;
-            --light-text: #6b7280;
-            --success-color: #10b981;
-            --danger-color: #ef4444;
+            --primary-color: #6366f1; /* بنفش روشن برای دکمه‌ها و عناصر اصلی */
+            --primary-hover: #4f46e5; /* بنفش تیره‌تر برای هاور */
+            --secondary-color: #2d2d2d; /* خاکستری تیره برای پس‌زمینه‌های ثانویه */
+            --text-color: #e5e7eb; /* خاکستری روشن برای متن اصلی */
+            --light-text: #9ca3af; /* خاکستری متوسط برای متن کم‌رنگ */
+            --success-color: #34d399; /* سبز روشن برای هشدارهای موفقیت */
+            --danger-color: #f87171; /* قرمز روشن برای هشدارهای خطا */
             --border-radius: 12px;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
         }
 
         * {
@@ -30,7 +30,7 @@
 
         body {
             font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
+            background-color: #1a1a1a; /* پس‌زمینه مشکی تیره */
             color: var(--text-color);
             line-height: 1.6;
             padding: 0;
@@ -49,16 +49,17 @@
         }
 
         .card {
-            background-color: white;
+            background-color: #2d2d2d; /* کارت خاکستری تیره */
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             overflow: hidden;
+            border: 1px solid #3f3f3f; /* حاشیه ظریف */
         }
 
         .card-header {
             padding: 1.5rem;
             text-align: center;
-            border-bottom: 1px solid #f3f4f6;
+            border-bottom: 1px solid #3f3f3f;
             position: relative;
         }
 
@@ -83,11 +84,11 @@
 
         .card-footer {
             padding: 1rem 1.5rem;
-            background-color: var(--secondary-color);
+            background-color: #262626; /* خاکستری تیره‌تر برای فوتر */
             text-align: center;
             font-size: 0.875rem;
             color: var(--light-text);
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid #3f3f3f;
         }
 
         .loading {
@@ -101,7 +102,7 @@
         .spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid rgba(79, 70, 229, 0.2);
+            border: 3px solid rgba(99, 102, 241, 0.2);
             border-radius: 50%;
             border-top-color: var(--primary-color);
             animation: spin 1s ease-in-out infinite;
@@ -117,14 +118,14 @@
         .version-badge {
             display: inline-flex;
             align-items: center;
-            background-color: var(--secondary-color);
+            background-color: #3f3f3f; /* خاکستری تیره برای بج */
             color: var(--primary-color);
             font-weight: 600;
             padding: 0.5rem 1.25rem;
             border-radius: 9999px;
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #4b4b4b;
             gap: 0.5rem;
         }
 
@@ -137,7 +138,7 @@
             margin: 0 auto 1.5rem;
             padding: 0.875rem 1.5rem;
             background-color: var(--primary-color);
-            color: white;
+            color: #ffffff;
             border: none;
             border-radius: 9999px;
             font-size: 1rem;
@@ -152,11 +153,11 @@
         }
 
         .download-btn:hover {
-            color: #ccc;
+            color: #e5e7eb;
             text-decoration: none;
             background-color: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
         }
 
         .countdown {
@@ -192,15 +193,15 @@
         }
 
         .alert-danger {
-            background-color: #fee2e2;
-            color: #b91c1c;
-            border: 1px solid #fecaca;
+            background-color: #7f1d1d; /* قرمز تیره برای هشدار خطا */
+            color: #fecaca;
+            border: 1px solid #991b1b;
         }
 
         .alert-success {
-            background-color: #d1fae5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
+            background-color: #064e3b; /* سبز تیره برای هشدار موفقیت */
+            color: #a7f3d0;
+            border: 1px solid #047857;
         }
 
         a {
@@ -226,7 +227,7 @@
         .dropdown-btn {
             width: 100%;
             padding: 0.875rem 1.5rem;
-            background-color: white;
+            background-color: #2d2d2d;
             color: var(--primary-color);
             border: 1px solid var(--primary-color);
             border-radius: 9999px;
@@ -243,13 +244,13 @@
         }
 
         .dropdown-btn:hover {
-            background-color: #f5f3ff;
+            background-color: #3f3f3f;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: white;
+            background-color: #2d2d2d;
             width: 100%;
             max-height: 300px;
             overflow-y: auto;
@@ -257,7 +258,7 @@
             border-radius: var(--border-radius);
             z-index: 1;
             margin-top: 0.5rem;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #4b4b4b;
         }
 
         .dropdown-content a {
@@ -266,12 +267,12 @@
             text-decoration: none;
             display: block;
             text-align: right;
-            border-bottom: 1px solid #f3f4f6;
+            border-bottom: 1px solid #3f3f3f;
             transition: all 0.2s ease;
         }
 
         .dropdown-content a:hover {
-            background-color: #f5f3ff;
+            background-color: #3f3f3f;
             color: var(--primary-color);
         }
 
@@ -302,16 +303,16 @@
 
         .version-divider {
             height: 1px;
-            background-color: #e5e7eb;
+            background-color: #4b4b4b;
             margin: 0.25rem 0;
         }
 
         .update-section {
-            background-color: #f5f3ff;
+            background-color: #3f3f3f;
             padding: 1rem;
             border-radius: var(--border-radius);
             margin-bottom: 1.5rem;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #4b4b4b;
         }
 
         .update-title {
@@ -342,11 +343,10 @@
                 align-items: flex-end;
                 gap: 0.25rem;
             }
-
         }
 
         .version-disabled {
-            color: #9ca3af;
+            color: #6b7280;
             cursor: not-allowed;
         }
 
@@ -371,8 +371,8 @@
         }
 
         .beta-badge {
-            background-color: #fef3c7;
-            color: #92400e;
+            background-color: #78350f; /* نارنجی تیره برای بج بتا */
+            color: #fed7aa;
             font-size: 0.75rem;
             padding: 0.25rem 0.5rem;
             border-radius: 9999px;
@@ -387,11 +387,11 @@
             margin-top: 1.5rem;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .accordion-item {
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #4b4b4b;
         }
 
         .accordion-item:last-child {
@@ -399,7 +399,7 @@
         }
 
         .accordion-header {
-            background-color: var(--secondary-color);
+            background-color: #262626;
             padding: 1rem 1.5rem;
             cursor: pointer;
             display: flex;
@@ -409,7 +409,7 @@
         }
 
         .accordion-header:hover {
-            background-color: #e5e7eb;
+            background-color: #3f3f3f;
         }
 
         .accordion-title {
@@ -433,7 +433,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background-color: white;
+            background-color: #2d2d2d;
         }
 
         .accordion-item.active .accordion-content {
