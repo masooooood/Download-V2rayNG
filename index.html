@@ -48,6 +48,25 @@
             padding: 0 1rem;
         }
 
+        .logo-container {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: 150px; /* اندازه لوگو، قابل تغییر */
+            animation: blink 1.5s ease-in-out infinite; /* انیمیشن چشمک‌زن */
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
         .card {
             background-color: #2d2d2d; /* کارت خاکستری تیره */
             border-radius: var(--border-radius);
@@ -85,6 +104,7 @@
         .card-footer {
             padding: 1rem 1.5rem;
             background-color: #262626; /* خاکستری تیره‌تر برای فوتر */
+            illumination: blue;
             text-align: center;
             font-size: 0.875rem;
             color: var(--light-text);
@@ -343,6 +363,10 @@
                 align-items: flex-end;
                 gap: 0.25rem;
             }
+
+            .logo {
+                width: 120px; /* اندازه کوچکتر برای موبایل */
+            }
         }
 
         .version-disabled {
@@ -465,6 +489,9 @@
 
 <body>
     <div class="container">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/Kjg3rJH/doublemvvv.png" alt="DoubleM VPN Logo" class="logo">
+        </div>
         <div class="card">
             <div class="card-header">
                 <h1><i class="fas fa-rocket"></i>دانلود آخرین نسخه v2rayNG</h1>
@@ -476,7 +503,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <div>کانال تلگرام ما<a href="https://t.me/DoubleMvpn_bot">DoubleM-VPN</a></div>
+                <div>کانال تلگرام دابل ام وی پی ان - ارائه دهنده فیلترشکن امن و پرسرعت<a href="https://t.me/doublemteam">DoubleM-VPN</a></div>
+                <div>ربات تلگرام دابل ام وی پی ان  <a href="https://t.me/DoubleMvpn_bot">DoubleM-VPN-BOT</a></div>
                 <div>این صفحه آخرین نسخه را از <a href="https://github.com/2dust/v2rayNG/releases" target="_blank">صفحه
                         ریلیزهای GitHub</a> دریافت
                     می‌کند</div>
@@ -716,7 +744,7 @@
             } else {
                 content = `
                     <div class="alert alert-danger">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                         خطا در دریافت اطلاعات از GitHub. لطفاً دوباره تلاش کنید.
                     </div>
                 `;
